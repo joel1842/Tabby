@@ -1,0 +1,22 @@
+[
+     {
+         "name": "Mom", 
+         "amount": 215.60,
+         "type": "Insurance Payment"
+     },
+     {
+         "name": "Dad", 
+         "amount": 100,
+         "type": "Fertilizer Delivery"
+     },
+     {
+         "name": "Adam", 
+         "amount": 361.25,
+         "type": "Tires"
+     },
+     {
+         "name": "Bob", 
+         "amount": 25,
+         "type": "Bubly"
+     }
+]

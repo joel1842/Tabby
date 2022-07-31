@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Sophie", 
+        "amount": 215.60,
+        "type": "Rent"
+    },
+    {
+        "name": "Marty", 
+        "amount": 57.80,
+        "type": "Covid Delivery"
+    },
+    {
+        "name": "Mom", 
+        "amount": 150,
+        "type": "Lulu Pants"
+    },
+    {
+        "name": "Robert", 1
+        "amount": 100,
+        "type": "Pizza"
+    }
+]
