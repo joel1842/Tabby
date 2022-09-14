@@ -1,25 +1,38 @@
 import React from 'react'
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const AppHeader = () => (
-    <>    
+    <View style={headerStyles.header}>    
         <Text style={headerStyles.title}>
-            Tabby 🐷 💸
+            Tabby 🐷
         </Text>
-        <Text style={headerStyles.subtitle}>
+        {/* <Text style={headerStyles.subtitle}>
             keep tabs on your loans
-        </Text>
-    </>
+        </Text> */}
+    </View>
 )
 
 const headerStyles = StyleSheet.create({
     title: {
-        fontSize: 36,
+        fontSize: 30,
         fontWeight: "500", 
-        marginTop: 10
+        marginTop: 10,
+        textAlign: 'center',
+        color: '#ffffff'
     },
     subtitle: {
         fontSize: 16
+    },
+    header: {
+        zIndex: 1,
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.3,
+        shadowRadius: 5,
+        backgroundColor: '#2b2d42', 
+        width: '100%',
+        height: '8%',
+        margin: 'auto'
     }
 })
 

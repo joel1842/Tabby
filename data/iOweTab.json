@@ -2,20 +2,24 @@
      {
          "name": "Mom", 
          "amount": 215.60,
+         "group": "Parents",
          "type": "Insurance Payment"
      },
      {
          "name": "Dad", 
          "amount": 100,
+         "group": "Parents",
          "type": "Fertilizer Delivery"
      },
      {
          "name": "Adam", 
+         "group": "Work",
          "amount": 361.25,
          "type": "Tires"
      },
      {
          "name": "Bob", 
+         "group": "Work",
          "amount": 25,
          "type": "Bubly"
      }

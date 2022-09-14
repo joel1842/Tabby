@@ -2,21 +2,25 @@
     {
         "name": "Sophie", 
         "amount": 215.60,
+        "group": "Friends",
         "type": "Rent"
     },
     {
         "name": "Marty", 
         "amount": 57.80,
+        "group": "Friends",
         "type": "Covid Delivery"
     },
     {
         "name": "Mom", 
         "amount": 150,
+        "group": "Parents",
         "type": "Lulu Pants"
     },
     {
         "name": "Robert",
         "amount": 100,
+        "group": "Friends",
         "type": "Pizza"
     }
 ]

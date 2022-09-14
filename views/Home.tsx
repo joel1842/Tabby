@@ -1,43 +1,58 @@
 import React, {useState} from "react";
-import { StyleSheet, View, Button } from 'react-native';
+import { StyleSheet, View, ScrollView, Pressable, Text } from 'react-native';
 import owedTab from '../data/owedTab.json'
 import iOweTab from '../data/iOweTab.json'
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 
-import AppHeader from "../components/AppHeader";
 import AmountOwed from "../components/AmountOwed";
 import OwedList from "../components/OwedList";
 
 const Home = () => {
-    const [tab, setTab] = useState(owedTab);
-    const [tabSwitchText, setTabSwitchText] = useState('Owed Tab');
- 
-    const switchTab = () => {
-        if (tabSwitchText === 'My Tab') {
-            setTab(owedTab)
-            setTabSwitchText('Owed Tab')
-        } else {
-            setTab(iOweTab)
-            setTabSwitchText('My Tab')
-        }
-
-    }
+    const [tab, setTab] = useState(0);
+    const tabData = tab === 0 ? owedTab : iOweTab;
 
     return (
-        <View style={homeStyles.container}>
-            <AppHeader />
-            <AmountOwed tab={tab} />
-            <Button title={`View ${tabSwitchText}`} onPress={switchTab} color="#AEFFB6" />
-            <OwedList tab={tab} />
-        </View>
+        <ScrollView contentContainerStyle={homeStyles.scroll}>
+            <AmountOwed tab={tabData} />
+            <OwedList tabData={tabData} tab={tab} setTab={setTab} />
+            <View style={homeStyles.homeButtonSelect}>
+                <Pressable style={[homeStyles.newTabButton, homeStyles.homeButton]}>
+                    <MaterialIcon name="forms-add-on" />
+                    <Text>Add Item</Text>
+                </Pressable>
+                <Pressable style={[homeStyles.addItemButton, homeStyles.homeButton]}>
+                    <MaterialIcon name="receipt" />
+                    <Text>New Tab</Text>
+                </Pressable>
+            </View>
+        </ScrollView>
     )
 }
 
 const homeStyles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
+      backgroundColor: '#fff'
+    },
+    homeButtonSelect: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '95%'
+    },
+    homeButton: {
+        borderRadius: 15,
+        padding: 15,
+        width: '48%'
+    },
+    newTabButton: {
+        backgroundColor: '#FFBA49'
+    },
+    addItemButton: {
+        backgroundColor: '#81D24B'
+    },
+    scroll: {
+        alignItems: 'center',
+        height: '100%'
     }
   });
 

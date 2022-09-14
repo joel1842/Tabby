@@ -25,13 +25,25 @@ const AmountOwed: FC<OwedProps> = ({ tab }) => {
 
 const owedStyles = StyleSheet.create({
     box: {
+//         /* Rectangle 3 */
+
+// position: absolute;
+// width: 294px;
+// height: 93px;
+// left: 13px;
+// top: 43px;
+
+// background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%), #FFBA49;
+// box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+// border-radius: 0px 0px 20px 20px;
+
         flex: 1,
-        width: '85%',
+        width: '95%',
         padding: 50,
         borderRadius: 15,
-        marginTop: 30,
-        height: "50%",
-        backgroundColor: '#AEFFB6',
+        borderTopRightRadius: 0,
+        borderTopLeftRadius: 0,
+        backgroundColor: '#FFBA49'
     },
     boxTitle: {
         fontSize: 20,
