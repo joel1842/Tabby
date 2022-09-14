@@ -6,9 +6,6 @@ const AppHeader = () => (
         <Text style={headerStyles.title}>
             Tabby 🐷
         </Text>
-        {/* <Text style={headerStyles.subtitle}>
-            keep tabs on your loans
-        </Text> */}
     </View>
 )
 

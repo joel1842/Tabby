@@ -1,8 +1,9 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { StyleSheet, View, TouchableHighlight } from 'react-native';
+import { useNavigate, useLocation } from 'react-router-native'
+
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
-import { useNavigate, useLocation } from 'react-router-native'
 
 interface FooterProps {
     tab: number;
@@ -22,15 +23,15 @@ const AppFooter = () => {
 
     return (
     <View style={FooterStyles.footer}>
-        <TouchableHighlight onPress={() => navigate('/')} style={selectedButton('/')}>
+        <TouchableHighlight onPress={() => navigate('/')} style={[FooterStyles.tab, selectedButton('/')]}>
            <MaterialIcon name="person-outline" size={30} color="white" />
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => navigate('/additem')} style={selectedButton('/additem')}>
+        <TouchableHighlight onPress={() => navigate('/additem')} style={[FooterStyles.tab, selectedButton('/additem')]}>
             <MaterialIcon name="receipt-long" size={30} color="white" />
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => console.log()} style={selectedButton()}>
+        <TouchableHighlight onPress={() => console.log()} style={[FooterStyles.tab, selectedButton('')]}>
             <MaterialCommunityIcon name="cash" size={30} color="white"/>
         </TouchableHighlight>
     </View>
@@ -38,9 +39,11 @@ const AppFooter = () => {
 
 const FooterStyles = StyleSheet.create({
     selectedTab: {
-        backgroundColor: '#404563',
+        backgroundColor: '#404563'
+    },
+    tab: {
         borderRadius: 10,
-        padding: 5
+        padding: 5 
     },
     footer: {
         backgroundColor: '#2b2d42',

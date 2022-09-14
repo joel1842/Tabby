@@ -1,5 +1,6 @@
 import React, {Dispatch, FC, SetStateAction} from 'react'
 import { View, Text, StyleSheet, Pressable } from 'react-native'
+
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons'
 
 interface TabProps {
@@ -27,11 +28,16 @@ const OwedList: FC<OwedProps> = ({ tab, setTab, tabData }) => (
                 <Text style={owedStyles.buttonTitle}>Groups</Text>
             </Pressable>
         </View>
-        {tabData.map(({name, amount}) => (
-            <View key={name} style={owedStyles.listStyle}>
-                <Text style={owedStyles.listName}>{name}</Text>
-                <Text style={owedStyles.listAmount}>{amount.toFixed(2)}</Text>
-            </View>
+        {tabData.map(({name, amount}, i) => (
+            <>
+                <View key={name} style={owedStyles.listStyle}>
+                    <Text style={owedStyles.listName}>{name}</Text>
+                    <Text style={owedStyles.listAmount}>$ <Text style={owedStyles.owedValue}>{amount.toFixed(2)}</Text></Text>
+                </View>
+                {tabData.length - 1 !== i && <View
+                    style={owedStyles.divider}
+                />}
+          </>
         ))}
     </View>
 )
@@ -46,10 +52,10 @@ const owedStyles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '75%',
-        alignSelf: 'center'
+        alignSelf: 'center',
+        marginBottom: 5
     },
     selectedOwed: {
-        
         backgroundColor: '#81D24B'
     },
     owedButton: {
@@ -66,19 +72,32 @@ const owedStyles = StyleSheet.create({
         borderRadius: 15,
         padding: 30,
         marginTop: 15,
+        marginBottom: 15,
         backgroundColor: '#ABE188',
     },
     listStyle: {
         marginTop: 15,
         margin: 5,
         flexDirection:'row', 
-        flexWrap:'wrap'
+        flexWrap:'wrap',
+        justifyContent: 'space-evenly'
+        
     },
     listName: {
         paddingRight: 10
     },
     listAmount: {
         paddingLeft: 10
+    },
+    divider: {
+        flex: 1,
+        marginTop: 0,
+        marginBottom: 5,
+        borderBottomColor: 'grey',
+        borderBottomWidth: StyleSheet.hairlineWidth,
+    },
+    owedValue: {
+        fontWeight: '600'
     }
 })
 
